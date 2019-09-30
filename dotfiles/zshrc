@@ -1,0 +1,23 @@
+#!/bin/zsh
+
+alias dotdrop='dotdrop --cfg=~/.dotfiles/dotdrop.config'
+
+source ~/.zplug/init.zsh
+
+zplug "zsh-users/zsh-history-substring-search"
+zplug "tcnksm/docker-alias", use:zshrc
+zplug "junegunn/fzf-bin"
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "dracula/zsh", as:theme
+zplug "desyncr/auto-ls"
+zplug "plugins/dotenv", from:oh-my-zsh
+zplug "zpm-zsh/colorize"
+zplug "chrissicool/zsh-bash"
+zplug "plugins/command-not-found", from:oh-my-zsh
+
+zplug load
+
+# zplug "plugins/git", from:oh-my-zsh
+
+eval "$(direnv hook zsh)"
+eval "$(thefuck --alias)"
